@@ -169,3 +169,5 @@ sysProps.xml
 /linux_simulate/
 *.vcxproj
 *.filters
+
+\.idea/

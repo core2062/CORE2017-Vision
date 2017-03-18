@@ -1,0 +1,3 @@
+[submodule "COREVisionLib"]
+	path = COREVisionLib
+	url = https://github.com/core2062/COREVisionLib.git
