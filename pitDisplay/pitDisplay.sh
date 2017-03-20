@@ -1,1 +1,2 @@
-DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/feh -q -p -Z -F -R  60 -Y -D 5.0 -B white ./slides
+#DISPLAY=:0.0 XAUTHORITY=/home/pi/.Xauthority /usr/bin/feh -q -p -Z -F -R  60 -Y -D 5.0 -B white /home/pi/CORE2017-Vision/pitDisplay/slides
+libreoffice --nologo --invisible --minimized --nofirststartwizard --nodefault --norestore --show slides.odp
