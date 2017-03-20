@@ -1,8 +1,8 @@
-# /lib/systemd/system/CORE2017-Vision.service
+# /lib/systemd/system/COREPitDisplay.service
 
 [Unit]
-Description=CORE 2062's 2017 Vision Processing System
-Wants=network.target
+Description=CORE 2062's 2017 Pit Display
+#Wants=network.target
 Documentation=https://github.com/core2062/CORE2017-Vision
 
 [Service]
@@ -12,11 +12,11 @@ Group=pi
 WorkingDirectory=/home/pi
 #Nice=5
 Environment=
-ExecStart=/home/pi/CORE2017-Vision/launch.sh
+ExecStart=/home/pi/CORE2017-Vision/pitDisplay/pitDisplay.sh
 # Use SIGINT to stop
 KillSignal=SIGINT
-Restart=on-failure
-SyslogIdentifier=CORE2017-Vision
+#Restart=on-failure
+SyslogIdentifier=COREPitDisplay
 
 [Install]
 WantedBy=multi-user.target
