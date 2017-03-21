@@ -20,9 +20,9 @@ int main() {
     CORETimer timeout;
     shared_ptr<NetworkTable> visionTable;
     UsbCamera gearCamera("Gear Camera", 0);
-    gearCamera.SetVideoMode(VideoMode::kGray, 416, 240, 30);
+    gearCamera.SetVideoMode(VideoMode::kMJPEG, 416, 240, 30);
     UsbCamera frontCamera("Front Camera", 1);
-    frontCamera.SetVideoMode(VideoMode::kGray, 416, 240, 30);
+    frontCamera.SetVideoMode(VideoMode::kMJPEG, 416, 240, 30);
 
     //Gear Camera
     timeout.Reset();
@@ -64,8 +64,10 @@ int main() {
             mjpegServer.SetSource(frontCamera);
         } else if (cameraSelection == "NULL") {
             cout << "Error: \"camera\" value not found on Vision Network Table!" << endl;
+            mjpegServer.SetSource(gearCamera);
         } else {
             cout << "Error: Invalid \"camera\" value found on Vision Network Table!" << endl;
+            mjpegServer.SetSource(gearCamera);
         }
     }
 }
