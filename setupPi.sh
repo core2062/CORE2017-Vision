@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #To run:
-#wget https://raw.githubusercontent.com/core2062/CORE2017-Vision/master/setupPi.sh && sudo chmod 775 setupPi.sh
+#wget -O setupPi.sh https://raw.githubusercontent.com/core2062/CORE2017-Vision/master/setupPi.sh && sudo chmod 775 setupPi.sh
 #sudo ./setupPi.sh
 
 #Set locale
