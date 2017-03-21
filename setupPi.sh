@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #To run:
-#wget https://gist.githubusercontent.com/Wishbonea/26dcf6949685b8be09d4476b32619617/raw/1ddd609d7fd2a58e275ef45351e28f861eeb50c5/setupPi.sh && sudo chmod 775 setupPi.sh && sudo ./setupPi.sh
+#wget https://raw.githubusercontent.com/core2062/CORE2017-Vision/master/setupPi.sh && sudo chmod 775 setupPi.sh
+#sudo ./setupPi.sh
 
 #Set locale
 sudo echo "en_US.UTF-8 UTF-8" > /etc/locale.gen
@@ -11,8 +12,8 @@ sudo apt-get purge wolfram-engine -y
 sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install git build-essential cmake vim pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev \
-                         libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev libgtk2.0-dev \
-                         libatlas-base-dev gfortran python2.7-dev python3-dev screen feh cmake-curses-gui -y
+                         libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev \
+                         libgtk2.0-dev libatlas-base-dev gfortran python2.7-dev python3-dev screen feh cmake-curses-gui -y
 
 #Download and compile OpenCV
 cd /home/pi
