@@ -48,7 +48,7 @@ sudo cp CORE2017-Vision.service /lib/systemd/system/CORE2017-Vision.service
 sudo cp pitDisplay/COREPitDisplay.service /lib/systemd/system/COREPitDisplay.service
 sudo systemctl daemon-reload
 sudo systemctl enable CORE2017-Vision.service
-sudo systemctl enable COREPitDisplay.service
+#sudo systemctl enable COREPitDisplay.service
 git clone https://github.com/core2062/COREVisionLib
 
 mkdir build
@@ -63,5 +63,7 @@ cd /home/pi
 wget -O orbitron.zip https://fonts.google.com/download?family=Orbitron
 unzip orbitron.zip
 sudo cp Orbitron-*.ttf /usr/share/fonts/
+sudo echo "@/home/pi/CORE2017-Vision/pitDisplay/pitDisplay.sh" >> /home/pi/.config/lxsession/LXDE-pi/autostart
+
 
 # Follow this guide: https://pimylifeup.com/raspberry-pi-photo-frame/
