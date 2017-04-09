@@ -47,7 +47,7 @@ int main() {
     visionCameraSource = new CvSource("Vision Camera", VideoMode::kMJPEG, visionResolution[0], visionResolution[1], 30);
     nullSource = new CvSource("Null Camera", VideoMode::kMJPEG, streamResolution[0], streamResolution[1], 30);
 
-    CORECapture visionCamera(0, 1280, 720, true, true);
+    CORECapture visionCamera(0, 1280, 720, false, true);
     visionCamera.SetFileInputLocation("../images/practiceImages/1.jpg", MULTI_IMAGE);
 
     visionCamera.SetBrightness(0);
