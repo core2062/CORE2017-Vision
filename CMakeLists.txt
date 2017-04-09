@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.6)
 project(CORE2017-Vision)
 
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11 -pthread")
 
 set(COREVisionLib ${PROJECT_SOURCE_DIR}/COREVisionLib)
 
@@ -14,6 +14,7 @@ include_directories(${COREVisionLib}/3rdparty/llvm/include)
 include_directories(${COREVisionLib})
 
 if(${CMAKE_SYSTEM_PROCESSOR} MATCHES "arm")
+    add_definitions(__ARM__)
     link_directories(${COREVisionLib}/3rdparty/cscore/Linux/arm-raspbian)
     link_directories(${COREVisionLib}/3rdparty/NetworkTables/Linux/arm-raspbian)
 elseif(WIN32)
@@ -26,7 +27,8 @@ endif()
 
 set(SOURCE_FILES
         ${PROJECT_SOURCE_DIR}/src/main.cpp
-        ${COREVisionLib}/src/CORETimer.cpp)
+        ${COREVisionLib}/src/CORETimer.cpp
+        ${COREVisionLib}/src/CORECapture.cpp)
 add_executable(CORE2017-Vision ${SOURCE_FILES})
 
 if(WIN32)
