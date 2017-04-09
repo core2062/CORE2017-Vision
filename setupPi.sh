@@ -65,5 +65,8 @@ unzip orbitron.zip
 sudo cp Orbitron-*.ttf /usr/share/fonts/
 sudo echo "@/home/pi/CORE2017-Vision/pitDisplay/pitDisplay.sh" >> /home/pi/.config/lxsession/LXDE-pi/autostart
 
+sudo unlink /etc/alternatives/desktop-background
+sudo ln -s /home/pi/CORE2017-Vision/CORE_Background_White.png /etc/alternatives/desktop-background
+
 
 # Follow this guide: https://pimylifeup.com/raspberry-pi-photo-frame/
