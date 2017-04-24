@@ -27,7 +27,9 @@ endif()
 set(SOURCE_FILES
         ${PROJECT_SOURCE_DIR}/src/main.cpp
         ${COREVisionLib}/src/CORETimer.cpp
-        #[[${COREVisionLib}/src/CORECapture.cpp src/visionProcessing.h]])
+        #[[${COREVisionLib}/src/CORECapture.cpp src/visionProcessing.h]]
+        #${PROJECT_SOURCE_DIR}/src/COREArgument.cpp
+        src/captureImages.cpp src/captureImages.h)
 add_executable(CORE2017-Vision ${SOURCE_FILES})
 
 if(WIN32)

@@ -13,7 +13,8 @@ sudo apt-get update -y
 sudo apt-get upgrade -y
 sudo apt-get install git build-essential cmake vim pkg-config libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev \
                          libavcodec-dev libavformat-dev libswscale-dev libv4l-dev libxvidcore-dev libx264-dev \
-                         libgtk2.0-dev libatlas-base-dev gfortran python2.7-dev python3-dev screen feh cmake-curses-gui -y
+                         libgtk2.0-dev libatlas-base-dev gfortran python2.7-dev python3-dev screen feh cmake-curses-gui \
+                         qv4l2 -y
 
 #Download and compile OpenCV
 cd /home/pi
@@ -64,9 +65,13 @@ wget -O orbitron.zip https://fonts.google.com/download?family=Orbitron
 unzip orbitron.zip
 sudo cp Orbitron-*.ttf /usr/share/fonts/
 sudo echo "@/home/pi/CORE2017-Vision/pitDisplay/pitDisplay.sh" >> /home/pi/.config/lxsession/LXDE-pi/autostart
+sudo echo "@xset s off" >> /home/pi/.config/lxsession/LXDE-pi/autostart
+sudo echo "@xset -dpms" >> /home/pi/.config/lxsession/LXDE-pi/autostart
+sudo echo "@xset s noblank" >> /home/pi/.config/lxsession/LXDE-pi/autostart
+sudo sed -ie 's/@xscreensaver -no-splash/#@xscreensaver -no-splash/g' /home/pi/.config/lxsession/LXDE-pi/autostart
+
 
 sudo unlink /etc/alternatives/desktop-background
 sudo ln -s /home/pi/CORE2017-Vision/CORE_Background_White.png /etc/alternatives/desktop-background
-
 
 # Follow this guide: https://pimylifeup.com/raspberry-pi-photo-frame/
